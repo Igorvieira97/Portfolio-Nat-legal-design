@@ -4,8 +4,8 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  // Adicione o base aqui com o nome exato do seu repositório:
-  base: "/Portfolio-Nat-legal-design/",
+  // Usa base diferente para dev e produção
+  base: mode === "development" ? "/" : "/Portfolio-Nat-legal-design/",
 
   server: {
     host: "::",
