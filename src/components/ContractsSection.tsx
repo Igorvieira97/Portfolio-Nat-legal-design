@@ -1,98 +1,186 @@
-import { ScrollReveal } from '@/hooks/useScrollReveal';
+import { useState, useEffect } from "react";
+import { ScrollReveal } from "@/hooks/useScrollReveal"; 
+import { ChevronLeft, ChevronRight, FileText, Eye } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import PDFViewer from "@/components/PDFViewer";
+
+// Importa imagens de cada pasta (tem que ser fixo)
+const socialMediaImages = Object.values(
+  import.meta.glob("@/assets/Gestao_estrategica_redes_sociais/*.{png,jpg,jpeg,svg}", {
+    eager: true,
+    import: "default",
+  })
+);
+
+const ghostwritingImages = Object.values(
+  import.meta.glob("@/assets/Ghostwriting/*.{png,jpg,jpeg,svg}", {
+    eager: true,
+    import: "default",
+  })
+);
+
+const smImages = Object.values(
+  import.meta.glob("@/assets/SocialMedia/*.{png,jpg,jpeg,svg}", {
+    eager: true,
+    import: "default",
+  })
+);
 
 const ContractsSection = () => {
   const contracts = [
     {
-      title: "Projeto Corporativo",
-      description: "Sistema de gestão completo desenvolvido para empresa multinacional",
-      duration: "6 meses"
+      title: "Contrato Gestão Estratégica de Redes Sociais",
+      images: socialMediaImages,
+      pdfUrl: "/contract-templates/Contrato_redessociais.pdf",
+      pdfName: "Modelo de Contrato para redes sociais",
     },
     {
-      title: "E-commerce Premium",
-      description: "Plataforma de vendas online com integração completa",
-      duration: "4 meses"
+      title: "Contrato de Prestação de Serviços de Ghostwriting",
+      images: ghostwritingImages,
+      pdfUrl: "/contract-templates/Contrato_ghostwriting.pdf",
+      pdfName: "Modelo de Contrato Ghostwriting",
     },
     {
-      title: "Aplicativo Mobile",
-      description: "App nativo para iOS e Android com mais de 50k downloads",
-      duration: "8 meses"
-    }
+      title: "Contrato de Prestação de Serviços de Social Media",
+      images: smImages,
+      pdfUrl: "/contract-templates/Contrato_socialmedia.pdf",
+      pdfName: "Modelo de Contrato para Social Media",
+    },
   ];
 
   return (
     <section id="contracts" className="py-20 lg:py-32 bg-muted">
       <div className="container mx-auto px-6">
-        {/* Section Header */}
+        {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
           <ScrollReveal delay={100}>
-            <div className="inline-block mb-6">
+            <div className="inline-block">
               <span className="font-kumbh text-sm tracking-widest text-muted-foreground uppercase">
                 Trabalhos Realizados
               </span>
               <div className="w-12 h-0.5 bg-primary mt-2 mx-auto"></div>
             </div>
           </ScrollReveal>
-          
+
           <ScrollReveal delay={200}>
             <h2 className="font-inria text-3xl lg:text-4xl font-light text-primary mb-6">
-              Meus Contratos
-              <br />
-              <span className="text-muted-foreground">Em Execução</span>
+              Legal Design na prática
             </h2>
-          </ScrollReveal>
-          
-          <ScrollReveal delay={300}>
-            <p className="font-kumbh text-lg text-muted-foreground leading-relaxed">
-              Projetos atualmente em desenvolvimento, demonstrando nosso 
-              compromisso com a excelência e entrega de resultados.
-            </p>
           </ScrollReveal>
         </div>
 
-        {/* Videos Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+        {/* Cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 mb-8 mt-10">
           {contracts.map((contract, index) => (
-            <ScrollReveal key={index} delay={400 + (index * 200)}>
-              <div className="space-y-6 group">
-                {/* Video Container */}
-                <div className="aspect-video bg-card rounded-lg overflow-hidden shadow-elegant">
-                  <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                    <div className="text-center space-y-2">
-                      <div className="w-16 h-16 bg-primary/30 rounded-full flex items-center justify-center mx-auto">
-                        <div className="w-6 h-6 bg-primary rounded-full"></div>
-                      </div>
-                      <p className="font-kumbh text-sm text-muted-foreground">
-                        Vídeo do Projeto
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Contract Info */}
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <h3 className="font-inria text-xl font-light text-primary">
-                      {contract.title}
-                    </h3>
-                    <span className="font-kumbh text-sm text-teal-primary bg-primary/10 px-3 py-1 rounded-full">
-                      {contract.duration}
-                    </span>
-                  </div>
-                  
-                  <p className="font-kumbh text-muted-foreground leading-relaxed">
-                    {contract.description}
-                  </p>
-                </div>
-                
-                {/* Hover Line */}
-                <div className="w-0 h-0.5 bg-primary transition-all duration-500 group-hover:w-16"></div>
-              </div>
+            <ScrollReveal key={index} delay={400 + index * 200}>
+              <ContractCard contract={contract} />
             </ScrollReveal>
           ))}
         </div>
-
       </div>
     </section>
+  );
+};
+
+const ContractCard = ({ contract }: { contract: any }) => {
+  const [current, setCurrent] = useState(0);
+  const [isPDFOpen, setIsPDFOpen] = useState(false);
+
+  // Detecta se é mobile
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+  const handleOpenPDF = () => {
+    if (isMobile) {
+      window.open(contract.pdfUrl, "_blank");
+    } else {
+      setIsPDFOpen(true);
+    }
+  };
+
+  // Slider automático
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) =>
+        prev === contract.images.length - 1 ? 0 : prev + 1
+      );
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [contract.images.length]);
+
+  const prevSlide = () =>
+    setCurrent((prev) =>
+      prev === 0 ? contract.images.length - 1 : prev - 1
+    );
+  const nextSlide = () =>
+    setCurrent((prev) =>
+      prev === contract.images.length - 1 ? 0 : prev + 1
+    );
+
+  return (
+    <div className="flex flex-col h-full group">
+      {/* Carousel */}
+      <div className="relative aspect-[3/4] bg-card rounded-lg overflow-hidden shadow-elegant">
+        {contract.images.map((img: string, idx: number) => (
+          <img
+            key={idx}
+            src={img}
+            alt={`${contract.title} ${idx + 1}`}
+            className={`absolute w-full h-full object-cover transition-opacity duration-700 ${
+              idx === current ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
+
+        {/* Navegação */}
+        <button
+          onClick={prevSlide}
+          className="absolute top-1/2 left-2 -translate-y-1/2 text-white opacity-80 hover:opacity-100 transition-opacity"
+        >
+          <ChevronLeft size={28} strokeWidth={1.5} />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute top-1/2 right-2 -translate-y-1/2 text-white opacity-80 hover:opacity-100 transition-opacity"
+        >
+          <ChevronRight size={28} strokeWidth={1.5} />
+        </button>
+      </div>
+
+      {/* Info + Botão alinhado na base */}
+      <div className="flex flex-col flex-1 justify-between space-y-4">
+        <div>
+          <div className="flex items-center justify-between">
+            <h3 className="font-inria text-xl font-light text-primary mt-6">
+              {contract.title}
+            </h3>
+          </div>
+        </div>
+        {contract.pdfUrl && (
+          <div className="pt-2 mt-auto">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleOpenPDF}
+              className="font-kumbh text-sm transition-smooth group-hover:border-primary/50"
+            >
+              <FileText className="h-4 w-4 mr-2" />
+              <Eye className="h-4 w-4 mr-2" />
+              Visualizar Contrato Completo
+            </Button>
+          </div>
+        )}
+      </div>
+
+      {/* PDF Viewer (desktop apenas) */}
+      {!isMobile && contract.pdfUrl && (
+        <PDFViewer
+          isOpen={isPDFOpen}
+          onClose={() => setIsPDFOpen(false)}
+          pdfUrl={contract.pdfUrl}
+          title={contract.pdfName || `Modelo - ${contract.title}`}
+        />
+      )}
+    </div>
   );
 };
 
