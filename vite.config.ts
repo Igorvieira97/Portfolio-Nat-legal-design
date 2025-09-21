@@ -4,17 +4,19 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  // Usa base diferente para dev e produção
-  base: mode === "development" ? "/" : "/Portfolio-Nat-legal-design/",
-
+  // Base sempre '/' para produção, evita 404 na Vercel
+  base: "/",
+  
   server: {
     host: "::",
     port: 8080,
   },
+  
   plugins: [
     react(),
     mode === "development" && componentTagger(),
   ].filter(Boolean),
+  
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
