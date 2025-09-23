@@ -63,7 +63,7 @@ const ContractsSection = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <h2 className="font-inria text-3xl lg:text-4xl font-light text-primary mb-6">
+            <h2 className="font-inria text-3xl lg:text-4xl font-bold italic text-primary mb-6">
               Legal Design na prática
             </h2>
           </ScrollReveal>
@@ -157,16 +157,6 @@ const ContractCard = ({ contract }: { contract: any }) => {
         </div>
         {contract.pdfUrl && (
           <div className="pt-2 mt-auto">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={handleOpenPDF}
-              className="font-kumbh text-sm transition-smooth group-hover:border-primary/50"
-            >
-              <FileText className="h-4 w-4 mr-2" />
-              <Eye className="h-4 w-4 mr-2" />
-              Visualizar Contrato Completo
-            </Button>
           </div>
         )}
       </div>

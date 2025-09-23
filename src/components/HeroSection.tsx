@@ -30,23 +30,22 @@ const HeroSection = () => {
           <div className="space-y-6 sm:space-y-8 lg:pl-8 order-1 lg:order-2">
             <div className="space-y-4 sm:space-y-6">
               <ScrollReveal direction="right" delay={200}>
-                <h1 className="font-inria text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light tracking-tight text-primary leading-tight">
-                  Estratégia que valoriza o seu negócio {/* Negrito e em italico */}
-                  <br />
-                  <span className="text-muted-foreground">
-                    <Typewriter 
-                      words={[
-                        "Para que você cresça com segurança.",
-                        "Para fortalecer a sua identidade.",
-                        "Para valorizar o seu negócio.",
-                        "Para proteger a sua marca." 
-                      ]} /* colocar texto com mais espaço */
-                      typeSpeed={120}
-                      deleteSpeed={80}
-                      delayBetweenWords={3000}
-                    />
-                  </span>
-                </h1>   
+                <h1 className="font-inria text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold italic tracking-tight text-primary leading-tight">
+                  Estratégias para você criar e empreender com mais liberdade
+                </h1>
+                <span className="text-muted-foreground block text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-inria font-light not-italic">
+                  <Typewriter 
+                    words={[
+                      "Para que você cresça com segurança.",
+                      "Para fortalecer a sua identidade.",
+                      "Para valorizar o seu negócio.",
+                      "Para proteger a sua marca." 
+                    ]} /* colocar texto com mais espaço */
+                    typeSpeed={120}
+                    deleteSpeed={80}
+                    delayBetweenWords={3000}
+                  />
+                </span>
               </ScrollReveal>
             </div>
 
@@ -56,8 +55,9 @@ const HeroSection = () => {
 
             <ScrollReveal direction="right" delay={800}>
               <p className="font-kumbh text-base sm:text-lg text-muted-foreground leading-relaxed max-w-lg">
-                Soluções sob medida que unem técnica jurídica e personalização para proteger marcas e negócios 
-                <br />com clareza e segurança.
+                Ofereço soluções jurídicas personalizadas (através dos contratos e registro de marcas), 
+                para garantir que a sua empresa cresça com clareza e proteção.
+                <br />
               </p>
             </ScrollReveal>
 

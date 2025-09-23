@@ -49,7 +49,7 @@ const ProposalsSection = () => {
             </div>
           </ScrollReveal>
           <ScrollReveal delay={200}>
-            <h2 className="font-inria text-3xl lg:text-4xl font-light text-primary mb-6">
+            <h2 className="font-inria text-3xl lg:text-4xl font-bold italic text-primary mb-6">
               Minhas Propostas
             </h2>
           </ScrollReveal>

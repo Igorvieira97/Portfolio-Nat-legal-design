@@ -49,8 +49,8 @@ const Header = () => {
         <div className="container mx-auto px-6 py-4">
           <nav className="flex items-center justify-between">
             {/* Logo/Brand */}
-            <div className="font-accent text-2xl tracking-wider text-primary">
-              Profissional
+            <div className="font-kumbh italic text-2xl tracking-wider text-primary">
+              Natália Rocha
             </div>
 
             {/* Navigation Menu */}

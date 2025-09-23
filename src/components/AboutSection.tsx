@@ -32,10 +32,10 @@ const AboutSection = () => {
           <div className="space-y-8 order-1 lg:order-2">
             <div className="space-y-6">
               <ScrollReveal direction="right" delay={200}>
-                <h2 className="font-inria text-3xl lg:text-4xl font-light text-primary">
+                <h2 className="font-inria text-3xl lg:text-4xl font-bold italic  text-primary">
                   — Oie, eu sou a Natália
                   <br />
-                  <span className="text-muted-foreground">Sobre mim</span>
+                  <span className="text-muted-foreground font-inria font-light not-italic">Sobre mim</span>
                 </h2>
               </ScrollReveal>
             </div>
@@ -43,7 +43,7 @@ const AboutSection = () => {
             <div className="space-y-6 font-kumbh text-muted-foreground leading-relaxed">
               <ScrollReveal direction="right" delay={300}>
                 <p>
-                  Oie! Eu sou a Natália, advogada inscrita na OAB/MS sob o n. 28022, 
+                  Advogada inscrita na OAB/MS sob o n. 28022, 
                   especializada em Direito Contratual e Propriedade Intelectual, com experiência 
                   em registro de marcas no INPI.
                 </p>
@@ -51,37 +51,35 @@ const AboutSection = () => {
               
               <ScrollReveal direction="right" delay={400}>
                 <p>
-                  Acredito que negócios sólidos começam com uma base segura – e é aqui que eu entro.
+                  Acredito que negócios sólidos começam com uma base segura – e é isso o que eu ajudo a construir.
                 </p>
               </ScrollReveal>
 
               <ScrollReveal direction="right" delay={500}>
                 <p>
-                  Combinando técnica jurídica e Legal Design, desenvolvo contratos claros, 
-                  profissionalismo em cada relação comercial. Afinal, proteção jurídica não precisa 
-                  ser complicada para ser eficiente.
+                  Unindo técnica jurídica e Legal Design, desenvolvo contratos claros e acessíveis que 
+                  irão conferir muito mais profissionalismo para as suas relações comerciais.
                 </p>
               </ScrollReveal>
               
               <ScrollReveal direction="right" delay={500}>
                 <p>
-                  Também atuo com o registro de marcas, cuidando para que a identidade e
-                  credibilidade do seu negócio estejam sempre bem seguras. 
+                  Também atuo com o registro de marcas, 
+                  garantindo que a identidade e a credibilidade do seu negócio estejam sempre bem resguardadas.
                 </p>
               </ScrollReveal>
               
               <ScrollReveal direction="right" delay={600}>
                 <p>
-                  Mas meu trabalho vai além de “fazer contratos” ou “registrar marcas”: eu protejo
-                  o que você construiu com dedicação, garantindo que cada detalhe esteja
-                  juridicamente blindado. 
+                  Meu trabalho vai além de “fazer contratos” ou “registrar marcas”: eu protejo o que você criou, 
+                  para que cada detalhe esteja juridicamente assegurado.
                 </p>
               </ScrollReveal>
 
               <ScrollReveal direction="right" delay={400}>
                 <p>
-                  Meu objetivo é um só: dar segurança para que você possa crescer sem medo,
-                  sabendo que cada etapa do seu negócio está resguardada.
+                  Meu objetivo é simples: dar segurança para que você possa crescer com liberdade, 
+                  sabendo que o seu negócio estará protegido.
                 </p>
               </ScrollReveal>
             </div>

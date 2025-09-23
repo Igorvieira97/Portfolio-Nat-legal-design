@@ -4,49 +4,51 @@ const ServicesSection = () => {
   const services = [
     {
       title: "Assessoria jurídica contratual",
-      intro: "Previna problemas antes que eles aconteçam.",
+      intro: "Invista na prevenção de problemas:",
       features: [
-        "Análise de necessidades e riscos",
+        "Análise das suas necessidades e riscos",
         "Participação em negociações",
-        "Ajustes contratuais conforme crescimento",
-        "Atendimento contínuo (preventivo) ou pontual (dúvidas)"
+        "Ajustes contratuais (levando em conta cada negociação)",
+        "Atendimento contínuo (preventivo), ou pontual (para tirar dúvidas)"
       ]
     },
     {
       title: "Elaboração contratual",
-      intro: "Contratos sob medida que refletem o seu negócio.",
+      intro: "Contratos sob medida que refletem o seu negócio. Estão incluídos:",
       features: [
-        "Reunião inicial para entender sua realidade",
-        "Transformação em documentos claros e estratégicos",
-        "Mais segurança e acessibilidade para clientes"
-      ]
+        "Reunião inicial;",
+        "Criação do(s) documento(s);",
+        "Aplicação de legal design"
+      ],
+      
     },
     {
       title: "Revisão contratual",
-      intro: "Seu contrato atual pode ficar muito melhor.",
+      intro: "Seu contrato atual pode ficar melhor:",
       features: [
-        "Revisão cláusula por cláusula",
-        "Parecer com riscos e melhorias",
-        "Sugestão de novo contrato, se necessário",
-        "Aplicação de legal design (linguagem simples, ícones, tabelas)"
+        "Revisão de cada cláusula",
+        "Parecer jurídico pontuando os riscos e com sugestões de melhorias",
+        "Sugestão de um novo contrato, se necessário;",
+        "Aplicação do Legal Design (com linguagem simples, ícones, tabelas e outros elementos visuais)."
       ]
     },
     {
       title: "Aplicação de legal design",
-      intro: "Modernize seus documentos jurídicos com clareza e impacto.",
+      intro: "Modernize os seus documentos jurídicos:",
       features: [
-        "Contratos, termos, petições e pareceres revisados",
-        "Documentos objetivos e acessíveis",
-        "Materiais bonitos, claros e profissionais"
+        "Contratos, termos e outros documentos podem ser atualizados;",
+        "Transforme a experiência dos seus clientes com documentos mais objetivos e acessíveis.",
+        "Materiais bonitos, claros e profissionais."
       ]
     },
     {
       title: "Registro de marcas no INPI",
-      intro: "Garanta a proteção da sua marca.",
+      intro: "Garanta a exclusividade da sua marca:",
       features: [
-        "Explicação detalhada sobre o processo",
-        "Acompanhamento em todas as etapas",
-        "Segurança jurídica no registro"
+        "Explicação detalhada do processo;",
+        "Análise de viabilidade;",
+        "Acompanhamento em todas as etapas;",
+        "Maior segurança e clareza ao longo do processo de registro"
       ]
     }
   ];
@@ -57,11 +59,11 @@ const ServicesSection = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
           <ScrollReveal delay={200}>
-            <h2 className="font-inria text-3xl lg:text-4xl font-light text-primary mb-6">
+            <h2 className="font-inria text-3xl lg:text-4xl font-bold italic text-primary mb-6">
               Serviços
               <br />
               <div className="w-12 h-0.5 bg-primary mt-2 mx-auto"></div>
-              <span className="text-muted-foreground">Pensados Para Você</span>
+              <span className="text-muted-foreground font-inria font-light not-italic">Pensados Para Você</span>
             </h2>
           </ScrollReveal>
         </div>
@@ -80,7 +82,7 @@ const ServicesSection = () => {
 
                   {/* Service Content */}
                   <div className="space-y-4">
-                    <h3 className="font-inria text-xl font-light text-primary">{service.title}</h3>
+                    <h3 className="font-inria text-xl font-bold italic text-primary">{service.title}</h3>
                     <p className="font-kumbh text-muted-foreground leading-relaxed">{service.intro}</p>
                     <ul className="space-y-2">
                       {service.features.map((feature, i) => (
@@ -111,7 +113,7 @@ const ServicesSection = () => {
 
                   {/* Service Content */}
                   <div className="space-y-4">
-                    <h3 className="font-inria text-xl font-light text-primary">{service.title}</h3>
+                    <h3 className="font-inria text-xl font-bold italic text-primary">{service.title}</h3>
                     <p className="font-kumbh text-muted-foreground leading-relaxed">{service.intro}</p>
                     <ul className="space-y-2">
                       {service.features.map((feature, i) => (

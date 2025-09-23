@@ -13,7 +13,7 @@ const ContactSection = () => {
                 <div className="w-12 h-0.5 bg-primary mt-2 mx-auto"></div>
               </div>
               
-              <h2 className="text-3xl lg:text-3xl font-light text-primary">
+              <h2 className="text-3xl lg:text-3xl font-bold italic text-primary">
                 Seu negócio merece um cuidado personalizado e especial.
                 <br />
               </h2>
@@ -31,13 +31,23 @@ const ContactSection = () => {
               </a>
               
               <a 
-                href="https://typebot.co/formul-rio-contratos-e-legal-de-xlpeycy" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-4 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/80 transition-colors font-medium"
+              href="https://typebot.co/formul-rio-registro-de-marca-v7elvms" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-8 py-4 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/80 transition-colors font-medium"
+            >
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="16" 
+                height="16" 
+                fill="currentColor" 
+                className="bi bi-r-circle mr-2" 
+                viewBox="0 0 16 16"
               >
-                ™️ Quero registrar a minha marca
-              </a>
+                <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.5 4.002h3.11c1.71 0 2.741.973 2.741 2.46 0 1.138-.667 1.94-1.495 2.24L11.5 12H9.98L8.52 8.924H6.836V12H5.5zm1.335 1.09v2.777h1.549c.995 0 1.573-.463 1.573-1.36 0-.913-.596-1.417-1.537-1.417z"/>
+              </svg>
+              Quero registrar a minha marca
+            </a>
             </div>
 
             {/* Social Links */}
