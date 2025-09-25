@@ -1,5 +1,7 @@
 import { ScrollReveal } from '@/hooks/useScrollReveal';
 import Foto_about_section from '@/assets/Foto_about_section.jpg';
+import FotoAbout400 from '@/assets/Foto_about_section_400.webp';
+import FotoAbout800 from '@/assets/Foto_about_section_800.webp';
 
 const AboutSection = () => {
   return (
@@ -12,9 +14,12 @@ const AboutSection = () => {
           
             <div className="flex justify-center">
               <img 
-                src={Foto_about_section} 
-                alt="Foto profissional" 
-                className="w-full max-w-md h-auto rounded-lg shadow-lg"
+              src={FotoAbout800}
+              srcSet={`${FotoAbout400} 400w, ${FotoAbout800} 800w`}
+              sizes="(max-width: 640px) 400px, 800px"
+              alt="Foto profissional"
+              className="w-full max-w-md h-auto rounded-lg shadow-lg"
+              loading="lazy"
               />
             </div>
               

@@ -76,7 +76,7 @@ const ServicesSection = () => {
               <ScrollReveal key={index} delay={400 + index * 200}>
                 <div className="space-y-6 group">
                   {/* Service Number */}
-                  <div className="font-accent text-6xl font-light text-beige-secondary group-hover:text-primary transition-elegant">
+                  <div className="font-inria text-6xl font-light text-beige-secondary group-hover:text-primary transition-elegant">
                     0{index + 1}
                   </div>
 
@@ -107,7 +107,7 @@ const ServicesSection = () => {
               <ScrollReveal key={index + 3} delay={1000 + index * 200}>
                 <div className="space-y-6 group">
                   {/* Service Number */}
-                  <div className="font-accent text-6xl font-light text-beige-secondary group-hover:text-primary transition-elegant">
+                  <div className="font-inria text-6xl font-light text-beige-secondary group-hover:text-primary transition-elegant">
                     0{index + 4}
                   </div>
 

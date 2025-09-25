@@ -1,6 +1,8 @@
 import Foto_Hero_section from '@/assets/Foto_Hero_section.jpg';
 import { ScrollReveal } from '@/hooks/useScrollReveal';
 import { Typewriter } from '@/hooks/useTypewriter';
+import Fotohero400 from '@/assets/foto-hero-400.webp.webp';
+import Fotohero800 from '@/assets/foto-hero-800.webp.webp';
 
 const HeroSection = () => {
   return (
@@ -13,9 +15,12 @@ const HeroSection = () => {
           
             <div className="flex justify-center">
               <img 
-                src={Foto_Hero_section} 
+                src={Fotohero400}
+                srcSet={`${Fotohero400} 400w, ${Fotohero800} 800w`}
+                sizes="(max-width: 640px) 400px, 800px" 
                 alt="Foto profissional" 
                 className="w-3/4 max-w-sm rounded-lg shadow-lg"
+                loading="lazy"
               />
             </div>
           
